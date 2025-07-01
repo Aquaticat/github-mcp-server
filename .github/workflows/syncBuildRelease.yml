@@ -51,6 +51,7 @@ jobs:
           - {os: darwin, arch: amd64, goos: darwin, goarch: amd64}
           - {os: darwin, arch: arm64, goos: darwin, goarch: arm64}
           - {os: windows, arch: amd64, goos: windows, goarch: amd64, ext: .exe}
+          - {os: windows, arch: arm64, goos: windows, goarch: arm64, ext: .exe}
 
     steps:
       - name: Checkout
