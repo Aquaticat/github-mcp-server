@@ -7,7 +7,7 @@ on:
 
 jobs:
   sync:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-arm
     permissions:
       contents: write
     outputs:
@@ -100,13 +100,10 @@ jobs:
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: build-${{ steps.commit.outputs.date }}-${{ steps.commit.outputs.sha }}
-          name: GitHub MCP Server - ${{ steps.commit.outputs.date }}
+          tag_name: unofficial-${{ steps.commit.outputs.sha }}
+          name: GitHub MCP Server Unofficial ${{ steps.commit.outputs.date }}
           body: |
             Automated build from synced upstream repository.
-            
-            **Commit**: ${{ steps.commit.outputs.sha }}
-            **Date**: ${{ steps.commit.outputs.date }}
             
             ## Usage
             ```bash
